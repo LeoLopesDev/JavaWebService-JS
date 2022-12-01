@@ -62,7 +62,6 @@ public class DepartmentService {
 
 	}
 
-	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@GET
 	public Response DepartmentRead() {
