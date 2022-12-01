@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      width: 100%;
+      height: 15vh;
+      background-color: rgb(39, 38, 38);
+      color: white;
+      font-size: 3em;
+      text-align: center;
+      line-height: 14vh;
+    }
+
+    #text {
+      flex: 1;
+      min-width: 210px;
+      margin: 4px;
+      height: 35px;
+      padding-left: 5px;
+      border-radius: 10px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #262626;
+      transition: 0.25s;
+      outline: none;
+      font-size: 20px;
+    }
+
+    #departments {
+      border: 3px solid #ddd;
+      padding: 5px;
+      font-size: 25px;
+      width: 90%;
+      table-layout: fixed;
+      text-align: center;
+
+    }
+  </style>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.ico" />
+  <title>Cadastrar Novo Setor</title>
+</head>
+
+<body>
+
+  <a href="/treinamento/index.html"><button style="background: #1c1e1f; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">VOLTAR</button></a>
+
+
+  <div id="departamento">
+
+    <h4>CADASTRO DE SETOR</h4>
+
+    <form id="form">
+      <input id="text" type="text" placeholder="nome">
+      <button style="background: #1c1e1f; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;" type="button" id="botao" onclick="criarSetor()">REGISTRAR NOVO SETOR</button>
+    </form>
+  </div>
+
+  <table id="departments" align="center" broder="1">
+
+    <script src="../js/new-department.js"></script>
+</body>
+
+</html>

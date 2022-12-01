@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="favicon.ico" />
+	<title>Cadastrar um novo Funcionário</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css">
+</head>
+
+<body>
+
+	<a href="/funcionarios/index.html">Voltar</a>
+
+	<div id="app">
+
+		<h4>Cadastro de funcionário</h4>
+
+		<div>
+			<input type="text" placeholder="nome" v-model="nome">
+			<input type="number" placeholder="idade" v-model="idade">
+			<label for="setores">Selecione um setor:</label>
+			<select name="setores" id="setores" v-model="setor">
+				<option :value="setor.id" v-for="setor in listaSetores">{{setor.nome}}</option>
+			</select>
+			<input type="text" placeholder="email" v-model="email">
+			<input type="number" placeholder="salario" v-model="salario">
+			<button @click="criarFuncionario">Registrar Novo Funcionário</button>
+		</div>
+
+	</div>
+
+
+	<script src="../resources/js/vue.js"></script>
+	<script src="../resources/js/axios.min.js"></script>
+	<script src="../resources/js/cadastro-de-funcionario.js"></script>
+</body>
+
+</html>

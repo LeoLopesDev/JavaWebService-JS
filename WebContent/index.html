@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body {
+			width: 100%;
+			height: 15vh;
+			background-color: rgb(39, 38, 38);
+			color: white;
+			font-size: 3em;
+			text-align: center;
+			line-height: 14vh;
+		}
+
+		.text {
+			flex: 1;
+			min-width: 210px;
+			margin: 4px;
+			height: 35px;
+			padding-left: 5px;
+			border-radius: 10px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: #262626;
+			transition: 0.25s;
+			outline: none;
+			font-size: 20px;
+		}
+
+		#table {
+			border: 3px solid #ddd;
+			padding: 5px;
+			font-size: 25px;
+			width: 90%;
+			table-layout: fixed;
+			text-align: center;
+		}
+
+		#tbody {
+			background-color: blueviolet;
+			padding: 10px;
+			color: white;
+			font-weight: 100;
+		}
+
+		td,
+		th {
+			white-space: pre-wrap;
+		}
+
+		#employees {
+			white-space: pre-wrap;
+		}
+	</style>
+	<meta charset="utf-8">
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<title>Funcionários - Início</title>
+</head>
+
+<body>
+	<h4 class="cad"> CADASTRO DE FUNCIONÁRIO </h4>
+
+
+	<input type="text" placeholder="nome" class="text" id="nome">
+	<input type="date" placeholder="nascimento" class="text" id="dataDeNascimento">
+	<input type="text" placeholder="cpf" class="text" id="cpf">
+	<input type="text" placeholder="email" class="text" id="email">
+	<input type="number" placeholder="salário" class="text" id="salario">
+	<br>
+	<label for="setores" class="text">Selecione um setor:</label>
+	<select name="setores" id="setores" class="text"></select>
+	<option value=""></option>
+	<button style="background: #1c1e1f; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;" onclick="salvarFuncionario()">Salvar Funcionário</button>
+	<a href="/treinamento/pages/new-department.html"><button style="background: #1c1e1f; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Setores</button></a>
+	<table id="table" align="center" broder="1" style="font-size: 17px">
+		<tr>
+			<th>Nome</th>
+			<th>CPF</th>
+			<th>Setor</th>
+			<th>Salário</th>
+			<th>Email</th>
+			<th>Data de Nascimento</th>
+		</tr>
+
+		<tbody id="employess">
+			</tr>
+		</tbody>
+	</table>
+
+	<script src="js/new-employee.js"></script>
+</body>
+
+</html>

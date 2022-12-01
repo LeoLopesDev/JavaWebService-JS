@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<title>Funcionários - Início</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap-vue.css">
+</head>
+
+<body>
+
+
+	<div id="inicio" class="container-fluid table">
+		<h4>Lista dos Funcionários</h4>
+		<table>
+			<tr>
+				<th>Nome</th>
+				<th>Setor</th>
+				<th>Salário</th>
+				<th>Email</th>
+				<th>Data de Nascimento</th>
+				<th>Imagem</th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tbody id="event-table">
+				<tr v-for="funcionario in lista">
+					<td>{{ funcionario.nome }}</td>
+					<td>{{ funcionario.setor.nome }}</td>
+					<td>{{ funcionario.salario }}</td>
+					<td>{{ funcionario.email }}</td>
+					<td>{{ funcionario.idade }}</td>
+					<td><span @click="iniciarEdicaoFuncionario(funcionario.id)">&#9998;</span>
+						<span @click="deletarFuncionario(funcionario.id)">&#10006;</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="treinamento/pages/new-employee.html"><button>Criar Funcionário</button></a>
+		<br>
+		<div v-if="editandoFuncionario==true">
+
+			<input type="text" placeholder="nome" v-model="nome">
+			<input type="number" placeholder="idade" v-model="idade">
+			<label for="setores">Selecione um setor:</label>
+			<select name="setores" id="setores" v-model="setor">
+				<option :value="setor.id" v-for="setor in listaSetores">{{setor.nome}}</option>
+			</select>
+			<input type="text" placeholder="email" v-model="email">
+			<input type="number" placeholder="salario" v-model="salario">
+			<button @click="editarFuncionario">Salvar Funcionário</button>
+		</div>
+	</div>
+
+
+	<script src="resources/js/vue.js"></script>
+	<script src="resources/js/axios.min.js"></script>
+	<script src="resources/js/index.js"></script>
+</body>
+
+</html>
