@@ -45,7 +45,6 @@ public class EmployeeService {
 
 	}
 
-	@Path("/")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	@POST
